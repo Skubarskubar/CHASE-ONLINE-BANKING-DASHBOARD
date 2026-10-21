@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  color: #1b1e22;
+  background: #ffffff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: #cfe6f8;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.nav-scroll {
+  scrollbar-width: none;
+}
+.nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(5px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-7px);
+  }
+  40%,
+  60% {
+    transform: translateX(7px);
+  }
+}
+
+@keyframes loadbar {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+@keyframes cardshine {
+  0% {
+    transform: translateX(-130%) rotate(12deg);
+  }
+  100% {
+    transform: translateX(180%) rotate(12deg);
+  }
+}
+
+.rise {
+  animation: rise 0.55s ease both;
+}
+.pop {
+  animation: pop 0.28s ease both;
+}
+.shake {
+  animation: shake 0.42s ease;
+}
+.loadbar {
+  animation: loadbar 1.05s ease-in-out infinite;
+}
+.card-shine {
+  animation: cardshine 2.8s ease-in-out infinite;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+  .print-sheet {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
